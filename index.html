@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO META TAGS -->
+    <title>Ajouter Watermark Image Gratuit en Ligne | Outil Filigrane - BlackCrow OS</title>
+    <meta name="description" content="Ajoutez un watermark ou filigrane à vos images gratuitement. Outil en ligne sans inscription : positionnement, opacité, taille ajustables. Protégez vos photos - BlackCrow OS.">
+    <meta name="keywords" content="watermark image, filigrane photo, ajouter watermark gratuit, watermark en ligne, protéger image, logo sur photo, outil watermark gratuit, blackcrow, vaisseau-monde">
+    <meta name="author" content="Le Vaisseau-Monde">
+    <meta name="robots" content="index, follow">
+    
+    <!-- CANONICAL -->
+    <link rel="canonical" href="https://levaisseaumonde.github.io/watermark-tool/">
+    
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Ajouter Watermark Image Gratuit | BlackCrow OS">
+    <meta property="og:description" content="Ajoutez un watermark à vos images gratuitement. Positionnement, opacité et taille personnalisables. Outil en ligne sans inscription.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://levaisseaumonde.github.io/watermark-tool/">
+    <meta property="og:image" content="https://levaisseaumonde.github.io/BlackCrow/assets/logo-blackcrow.png">
+    <meta property="og:site_name" content="BlackCrow OS - Le Vaisseau-Monde">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@adirawashere">
+    <meta name="twitter:title" content="Ajouter Watermark Image Gratuit | BlackCrow OS">
+    <meta name="twitter:description" content="Ajoutez un filigrane à vos images gratuitement. Outil en ligne personnalisable.">
+    <meta name="twitter:image" content="https://levaisseaumonde.github.io/BlackCrow/assets/logo-blackcrow.png">
+    
+    <!-- SCHEMA.ORG -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Outil Watermark BlackCrow",
+        "alternateName": "Ajout filigrane image gratuit",
+        "description": "Ajoutez un watermark ou filigrane à vos images gratuitement en ligne. Positionnement, opacité et taille personnalisables.",
+        "url": "https://levaisseaumonde.github.io/watermark-tool/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "featureList": [
+            "Ajout de watermark personnalisé",
+            "9 positions de placement",
+            "Opacité réglable",
+            "Taille ajustable",
+            "Export PNG haute qualité",
+            "Aucune inscription requise"
+        ],
+        "author": {
+            "@type": "Organization",
+            "name": "Le Vaisseau-Monde",
+            "url": "https://www.vaisseau-monde.fr"
+        }
+    }
+    </script>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="https://levaisseaumonde.github.io/BlackCrow/assets/logo-blackcrow.png">
+    
+    <!--
+    ╔═══════════════════════════════════════════════════════════════╗
+    ║   MODULE: MARQUE.SYS                                         ║
+    ║   Fonction: Marquage et protection d'archives visuelles      ║
+    ║   Status: OPÉRATIONNEL                                       ║
+    ║   Accès: PUBLIC                                              ║
+    ╚═══════════════════════════════════════════════════════════════╝
+    
+    Chaque archive doit porter sa marque.
+    Chaque image doit révéler son origine.
+    
+    QLVVP 🖤
+    -->
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #a0a0a0;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            padding: 20px;
+            padding-top: 68px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Back link */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 15px;
+            font-size: 11px;
+            color: #444;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #888;
+        }
+
+        .header {
+            border: 1px solid #333;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header-small {
+            font-size: 11px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .header h1 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+
+        .header-sub {
+            font-size: 11px;
+            color: #444;
+        }
+
+        /* SEO text discret */
+        .seo-intro {
+            font-size: 11px;
+            color: #2a2a2a;
+            margin-bottom: 20px;
+            padding: 12px;
+            border-left: 2px solid #1a1a1a;
+            line-height: 1.5;
+        }
+
+        .main-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel {
+            border: 1px solid #333;
+            padding: 20px;
+            background: #0f0f0f;
+            margin-bottom: 20px;
+        }
+
+        .panel-title {
+            font-size: 11px;
+            color: #888;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 11px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .field input[type="text"],
+        .field input[type="number"] {
+            width: 100%;
+            background: #111;
+            border: 1px solid #333;
+            padding: 10px;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+
+        .field input:focus {
+            outline: none;
+            border-color: #555;
+        }
+
+        .upload-zone {
+            border: 1px dashed #333;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .upload-zone:hover {
+            border-color: #555;
+        }
+
+        .upload-zone .icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .upload-zone .text {
+            font-size: 11px;
+            color: #555;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .slider-container {
+            margin-bottom: 20px;
+        }
+
+        .slider-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .slider-row label {
+            font-size: 11px;
+            color: #555;
+            min-width: 80px;
+        }
+
+        .slider-row input[type="range"] {
+            flex: 1;
+            -webkit-appearance: none;
+            background: #222;
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        .slider-row input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #888;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .slider-row input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: #888;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .slider-row .value {
+            font-size: 11px;
+            color: #888;
+            min-width: 40px;
+            text-align: right;
+        }
+
+        .position-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .position-btn {
+            background: #111;
+            border: 1px solid #333;
+            color: #888;
+            padding: 12px;
+            cursor: pointer;
+            font-size: 11px;
+            font-family: 'Courier New', monospace;
+            transition: all 0.2s;
+        }
+
+        .position-btn:hover {
+            background: #1a1a1a;
+            border-color: #555;
+        }
+
+        .position-btn.active {
+            background: #2a2a2a;
+            border-color: #888;
+            color: #fff;
+        }
+
+        .btn {
+            width: 100%;
+            background: #1a1a1a;
+            border: 1px solid #444;
+            padding: 15px;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            background: #252525;
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-primary {
+            background: #fff;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background: #ddd;
+        }
+
+        .canvas-container {
+            position: relative;
+            background: #050505;
+            border: 1px solid #333;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: auto;
+        }
+
+        #previewCanvas {
+            max-width: 100%;
+            max-height: 80vh;
+            display: block;
+        }
+
+        .placeholder {
+            color: #333;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .metadata-preview {
+            background: #0a0a0a;
+            border: 1px solid #222;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 10px;
+            color: #555;
+        }
+
+        .metadata-preview div {
+            margin-bottom: 5px;
+        }
+
+        .scanlines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            z-index: 1000;
+        }
+
+        .info-box {
+            background: #0d0d0d;
+            border: 1px solid #222;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 11px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .checkbox-field {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-field input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .checkbox-field label {
+            font-size: 11px;
+            color: #888;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #1a1a1a;
+        }
+
+        .faq-section h2 {
+            font-size: 12px;
+            color: #444;
+            margin-bottom: 15px;
+            font-weight: normal;
+        }
+
+        .faq-item {
+            margin-bottom: 12px;
+        }
+
+        .faq-item h3 {
+            font-size: 10px;
+            color: #3a3a3a;
+            margin-bottom: 4px;
+            font-weight: normal;
+        }
+
+        .faq-item p {
+            font-size: 10px;
+            color: #2a2a2a;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #333;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .footer div {
+            margin: 5px 0;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: #444;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #888;
+        }
+
+        .footer-ecosystem {
+            margin-top: 12px;
+            font-size: 9px;
+            color: #2a2a2a;
+        }
+
+        .footer-ecosystem a {
+            color: #3a3a3a;
+            text-decoration: none;
+        }
+
+        .footer-ecosystem a:hover {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="scanlines"></div>
+    
+    <!-- NAVBAR BLACKCROW PARTAGÉE -->
+    <div id="bc-navbar"></div>
+
+    <div class="container">
+        
+        <header class="header">
+            <div class="header-small">// BLACKCROW_OS / TOOLS / MARQUE.SYS</div>
+            <h1>Ajouter Watermark - Outil Filigrane Gratuit</h1>
+            <div class="header-sub">Module de marquage et protection d'archives visuelles — v0.2</div>
+        </header>
+
+        <!-- SEO intro discret -->
+        <p class="seo-intro">Ajoutez un watermark ou filigrane à vos images gratuitement. Personnalisez la position, l'opacité et la taille. Export PNG haute qualité, aucune inscription requise.</p>
+
+        <div class="main-grid">
+            <!-- LEFT PANEL -->
+            <div>
+                <!-- IMAGE UPLOAD -->
+                <section class="panel">
+                    <div class="panel-title">// Image Source</div>
+                    <div class="upload-zone" id="imageUploadZone" role="button" aria-label="Charger une image">
+                        <div class="icon">⬆</div>
+                        <div class="text">Cliquer pour charger une image</div>
+                        <div class="text" style="margin-top: 8px; color: #444;">JPG, PNG, WebP acceptés</div>
+                    </div>
+                    <input type="file" id="imageInput" accept="image/*" aria-label="Sélectionner image source">
+
+                    <button class="btn" id="resetBtn" disabled>↻ Réinitialiser</button>
+                </section>
+
+                <!-- WATERMARK UPLOAD -->
+                <section class="panel">
+                    <div class="panel-title">// Watermark / Filigrane</div>
+                    <div class="upload-zone" id="watermarkUploadZone" role="button" aria-label="Charger watermark">
+                        <div id="watermarkPreview">
+                            <div class="icon">🖼</div>
+                            <div class="text">Charger votre logo (PNG recommandé)</div>
+                        </div>
+                    </div>
+                    <input type="file" id="watermarkInput" accept="image/*" aria-label="Sélectionner watermark">
+
+                    <div class="slider-container">
+                        <div class="slider-row">
+                            <label for="watermarkSize">Taille</label>
+                            <input type="range" id="watermarkSize" min="5" max="50" value="15" aria-label="Taille du watermark">
+                            <span class="value" id="sizeValue">15%</span>
+                        </div>
+                        <div class="slider-row">
+                            <label for="watermarkOpacity">Opacité</label>
+                            <input type="range" id="watermarkOpacity" min="10" max="100" value="70" aria-label="Opacité du watermark">
+                            <span class="value" id="opacityValue">70%</span>
+                        </div>
+                        <div class="slider-row">
+                            <label for="watermarkMargin">Marge</label>
+                            <input type="range" id="watermarkMargin" min="0" max="100" value="20" aria-label="Marge du watermark">
+                            <span class="value" id="marginValue">20px</span>
+                        </div>
+                    </div>
+
+                    <div class="panel-title" style="margin-top: 20px;">Position du filigrane</div>
+                    <div class="position-grid" role="group" aria-label="Position du watermark">
+                        <button class="position-btn" data-position="top-left" title="Haut gauche">↖</button>
+                        <button class="position-btn" data-position="top-center" title="Haut centre">↑</button>
+                        <button class="position-btn" data-position="top-right" title="Haut droit">↗</button>
+                        <button class="position-btn" data-position="center-left" title="Centre gauche">←</button>
+                        <button class="position-btn" data-position="center" title="Centre">+</button>
+                        <button class="position-btn" data-position="center-right" title="Centre droit">→</button>
+                        <button class="position-btn" data-position="bottom-left" title="Bas gauche">↙</button>
+                        <button class="position-btn" data-position="bottom-center" title="Bas centre">↓</button>
+                        <button class="position-btn active" data-position="bottom-right" title="Bas droit">↘</button>
+                    </div>
+                </section>
+
+                <!-- METADATA -->
+                <section class="panel">
+                    <div class="panel-title">// Métadonnées (optionnel)</div>
+                    
+                    <div class="checkbox-field">
+                        <input type="checkbox" id="showMetadata" checked>
+                        <label for="showMetadata">Afficher métadonnées sur l'image</label>
+                    </div>
+
+                    <div class="field">
+                        <label for="metaTitle">Titre</label>
+                        <input type="text" id="metaTitle" placeholder="NOM_FICHIER">
+                    </div>
+
+                    <div class="field">
+                        <label for="metaYear">Date (Année)</label>
+                        <input type="text" id="metaYear" placeholder="2026" value="2026">
+                    </div>
+
+                    <div class="field">
+                        <label for="metaSource">Source</label>
+                        <input type="text" id="metaSource" placeholder="BLACKCROW_ARCHIVES" value="BLACKCROW_ARCHIVES">
+                    </div>
+
+                    <div class="metadata-preview">
+                        <div>[<span id="previewSource">BLACKCROW_ARCHIVES</span>]</div>
+                        <div>FICHIER: <span id="previewTitle">-</span></div>
+                        <div>DATE: <span id="previewYear">2026</span></div>
+                    </div>
+                </section>
+
+                <!-- EXPORT -->
+                <button class="btn btn-primary" id="exportBtn" disabled>⬇ TÉLÉCHARGER IMAGE (PNG)</button>
+            </div>
+
+            <!-- RIGHT PANEL - CANVAS -->
+            <div>
+                <div class="canvas-container">
+                    <div class="placeholder" id="placeholder">
+                        <div>Chargez une image pour commencer</div>
+                        <div style="margin-top: 10px; font-size: 11px; color: #222;">Votre image n'est jamais uploadée sur un serveur</div>
+                    </div>
+                    <canvas id="previewCanvas" style="display: none;"></canvas>
+                </div>
+
+                <!-- FAQ pour SEO -->
+                <section class="faq-section">
+                    <h2>// QUESTIONS FRÉQUENTES</h2>
+                    
+                    <article class="faq-item">
+                        <h3>> Qu'est-ce qu'un watermark ?</h3>
+                        <p>Un watermark (filigrane) est une image ou texte semi-transparent ajouté sur une photo pour la protéger ou indiquer son origine. Souvent utilisé par les photographes et créateurs.</p>
+                    </article>
+                    
+                    <article class="faq-item">
+                        <h3>> Mes images sont-elles uploadées ?</h3>
+                        <p>Non. Tout le traitement se fait dans votre navigateur. Vos images ne quittent jamais votre ordinateur — aucun serveur n'y a accès.</p>
+                    </article>
+                    
+                    <article class="faq-item">
+                        <h3>> Quel format pour mon watermark ?</h3>
+                        <p>PNG avec fond transparent recommandé. Cela permet au watermark de s'intégrer proprement sur n'importe quelle image.</p>
+                    </article>
+                    
+                    <article class="faq-item">
+                        <h3>> C'est quoi BlackCrow OS ?</h3>
+                        <p>BlackCrow est l'interface système du <a href="https://www.vaisseau-monde.fr" target="_blank" rel="noopener">Vaisseau-Monde</a>, un univers de science-fiction. Cet outil fait partie des modules publics.</p>
+                    </article>
+                </section>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div>// ARCHIVE MARQUÉE //</div>
+            <div>QLVVP 🖤</div>
+
+            <nav class="footer-links" aria-label="Réseaux Le Vaisseau-Monde">
+                <a href="https://www.vaisseau-monde.fr" target="_blank" rel="noopener">Blog</a>
+                <a href="https://www.youtube.com/@VaisseauMonde" target="_blank" rel="noopener">YouTube</a>
+                <a href="https://www.wattpad.com/story/407419657-le-vaisseau-monde" target="_blank" rel="noopener">Wattpad</a>
+                <a href="https://www.reddit.com/r/VaisseauMonde/" target="_blank" rel="noopener">Reddit</a>
+                <a href="https://levaisseaumonde.github.io/BlackCrow/" target="_blank" rel="noopener">BlackCrow OS</a>
+            </nav>
+        </footer>
+    </div>
+
+    <script>
+        // Charger la navbar partagée + détecter lien actif après injection
+        fetch('https://levaisseaumonde.github.io/BlackCrow/navbar.html')
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById('bc-navbar').innerHTML = html;
+                var current = window.location.href;
+                document.querySelectorAll('.bc-nav a').forEach(function(link) {
+                    if (current.indexOf(link.getAttribute('href').replace(/\/$/, '')) !== -1) {
+                        link.classList.add('bc-active');
+                    }
+                });
+            })
+            .catch(() => {});
+
+        // === STORAGE KEYS ===
+        const STORAGE_KEYS = {
+            watermarkSize: 'blackcrow_wm_size',
+            watermarkOpacity: 'blackcrow_wm_opacity',
+            watermarkMargin: 'blackcrow_wm_margin',
+            watermarkPosition: 'blackcrow_wm_position',
+            watermarkDataURL: 'blackcrow_wm_dataurl',
+            metaTitle: 'blackcrow_meta_title',
+            metaYear: 'blackcrow_meta_year',
+            metaSource: 'blackcrow_meta_source',
+            showMetadata: 'blackcrow_show_meta'
+        };
+
+        // === DOM ELEMENTS ===
+        const imageInput = document.getElementById('imageInput');
+        const imageUploadZone = document.getElementById('imageUploadZone');
+        const watermarkInput = document.getElementById('watermarkInput');
+        const watermarkUploadZone = document.getElementById('watermarkUploadZone');
+        const watermarkSize = document.getElementById('watermarkSize');
+        const watermarkOpacity = document.getElementById('watermarkOpacity');
+        const watermarkMargin = document.getElementById('watermarkMargin');
+        const sizeValue = document.getElementById('sizeValue');
+        const opacityValue = document.getElementById('opacityValue');
+        const marginValue = document.getElementById('marginValue');
+        const positionBtns = document.querySelectorAll('.position-btn');
+        const metaTitle = document.getElementById('metaTitle');
+        const metaYear = document.getElementById('metaYear');
+        const metaSource = document.getElementById('metaSource');
+        const showMetadata = document.getElementById('showMetadata');
+        const previewTitle = document.getElementById('previewTitle');
+        const previewYear = document.getElementById('previewYear');
+        const previewSource = document.getElementById('previewSource');
+        const exportBtn = document.getElementById('exportBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const canvas = document.getElementById('previewCanvas');
+        const ctx = canvas.getContext('2d');
+        const placeholder = document.getElementById('placeholder');
+
+        // === STATE ===
+        let sourceImage = null;
+        let watermarkImage = null;
+        let currentPosition = 'bottom-right';
+
+        // === FUNCTIONS ===
+        function loadSettings() {
+            watermarkSize.value = localStorage.getItem(STORAGE_KEYS.watermarkSize) || 15;
+            watermarkOpacity.value = localStorage.getItem(STORAGE_KEYS.watermarkOpacity) || 70;
+            watermarkMargin.value = localStorage.getItem(STORAGE_KEYS.watermarkMargin) || 20;
+            metaTitle.value = localStorage.getItem(STORAGE_KEYS.metaTitle) || '';
+            metaYear.value = localStorage.getItem(STORAGE_KEYS.metaYear) || '2026';
+            metaSource.value = localStorage.getItem(STORAGE_KEYS.metaSource) || 'BLACKCROW_ARCHIVES';
+            
+            const savedPosition = localStorage.getItem(STORAGE_KEYS.watermarkPosition) || 'bottom-right';
+            currentPosition = savedPosition;
+            
+            const savedShowMeta = localStorage.getItem(STORAGE_KEYS.showMetadata);
+            if (savedShowMeta !== null) {
+                showMetadata.checked = savedShowMeta === 'true';
+            }
+
+            updateSliderDisplays();
+            updateMetadataPreview();
+            updatePositionButtons();
+
+            const savedWatermark = localStorage.getItem(STORAGE_KEYS.watermarkDataURL);
+            if (savedWatermark) {
+                loadWatermarkFromDataURL(savedWatermark);
+            }
+        }
+
+        function saveSettings() {
+            localStorage.setItem(STORAGE_KEYS.watermarkSize, watermarkSize.value);
+            localStorage.setItem(STORAGE_KEYS.watermarkOpacity, watermarkOpacity.value);
+            localStorage.setItem(STORAGE_KEYS.watermarkMargin, watermarkMargin.value);
+            localStorage.setItem(STORAGE_KEYS.watermarkPosition, currentPosition);
+            localStorage.setItem(STORAGE_KEYS.metaTitle, metaTitle.value);
+            localStorage.setItem(STORAGE_KEYS.metaYear, metaYear.value);
+            localStorage.setItem(STORAGE_KEYS.metaSource, metaSource.value);
+            localStorage.setItem(STORAGE_KEYS.showMetadata, showMetadata.checked);
+        }
+
+        function updateSliderDisplays() {
+            sizeValue.textContent = watermarkSize.value + '%';
+            opacityValue.textContent = watermarkOpacity.value + '%';
+            marginValue.textContent = watermarkMargin.value + 'px';
+        }
+
+        function updateMetadataPreview() {
+            previewTitle.textContent = metaTitle.value || '-';
+            previewYear.textContent = metaYear.value || '2026';
+            previewSource.textContent = metaSource.value || 'BLACKCROW_ARCHIVES';
+        }
+
+        function updatePositionButtons() {
+            positionBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.position === currentPosition);
+            });
+        }
+
+        // IMAGE UPLOAD
+        imageUploadZone.addEventListener('click', () => imageInput.click());
+        
+        imageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        sourceImage = img;
+                        renderPreview();
+                        exportBtn.disabled = false;
+                        resetBtn.disabled = false;
+                    };
+                    img.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // WATERMARK UPLOAD
+        watermarkUploadZone.addEventListener('click', () => watermarkInput.click());
+        
+        watermarkInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    loadWatermarkFromDataURL(event.target.result);
+                    localStorage.setItem(STORAGE_KEYS.watermarkDataURL, event.target.result);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function loadWatermarkFromDataURL(dataURL) {
+            const img = new Image();
+            img.onload = () => {
+                watermarkImage = img;
+                document.getElementById('watermarkPreview').innerHTML = `
+                    <img src="${dataURL}" style="max-width: 100px; max-height: 100px;" alt="Watermark chargé">
+                    <div class="text" style="margin-top: 8px;">Watermark chargé ✓</div>
+                `;
+                renderPreview();
+            };
+            img.src = dataURL;
+        }
+
+        // POSITION BUTTONS
+        positionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentPosition = btn.dataset.position;
+                updatePositionButtons();
+                saveSettings();
+                renderPreview();
+            });
+        });
+
+        // SLIDERS
+        [watermarkSize, watermarkOpacity, watermarkMargin].forEach(slider => {
+            slider.addEventListener('input', () => {
+                updateSliderDisplays();
+                saveSettings();
+                renderPreview();
+            });
+        });
+
+        // METADATA INPUTS
+        [metaTitle, metaYear, metaSource].forEach(input => {
+            input.addEventListener('input', () => {
+                updateMetadataPreview();
+                saveSettings();
+                renderPreview();
+            });
+        });
+
+        showMetadata.addEventListener('change', () => {
+            saveSettings();
+            renderPreview();
+        });
+
+        // RENDER PREVIEW
+        function renderPreview() {
+            if (!sourceImage) return;
+
+            canvas.width = sourceImage.width;
+            canvas.height = sourceImage.height;
+            ctx.drawImage(sourceImage, 0, 0);
+
+            if (watermarkImage) {
+                const size = parseInt(watermarkSize.value) / 100;
+                const opacity = parseInt(watermarkOpacity.value) / 100;
+                const margin = parseInt(watermarkMargin.value);
+
+                const wmWidth = canvas.width * size;
+                const wmHeight = (watermarkImage.height / watermarkImage.width) * wmWidth;
+
+                let x, y;
+                switch (currentPosition) {
+                    case 'top-left': x = margin; y = margin; break;
+                    case 'top-center': x = (canvas.width - wmWidth) / 2; y = margin; break;
+                    case 'top-right': x = canvas.width - wmWidth - margin; y = margin; break;
+                    case 'center-left': x = margin; y = (canvas.height - wmHeight) / 2; break;
+                    case 'center': x = (canvas.width - wmWidth) / 2; y = (canvas.height - wmHeight) / 2; break;
+                    case 'center-right': x = canvas.width - wmWidth - margin; y = (canvas.height - wmHeight) / 2; break;
+                    case 'bottom-left': x = margin; y = canvas.height - wmHeight - margin; break;
+                    case 'bottom-center': x = (canvas.width - wmWidth) / 2; y = canvas.height - wmHeight - margin; break;
+                    case 'bottom-right':
+                    default: x = canvas.width - wmWidth - margin; y = canvas.height - wmHeight - margin; break;
+                }
+
+                ctx.globalAlpha = opacity;
+                ctx.drawImage(watermarkImage, x, y, wmWidth, wmHeight);
+                ctx.globalAlpha = 1;
+            }
+
+            if (showMetadata.checked) {
+                const fontSize = Math.max(10, canvas.width * 0.012);
+                ctx.font = `${fontSize}px 'Courier New', monospace`;
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+                ctx.textAlign = 'left';
+
+                const metaMargin = 15;
+                const lineHeight = fontSize * 1.4;
+                let metaY = metaMargin + fontSize;
+
+                const metaLines = [
+                    `[${metaSource.value}]`,
+                    `FICHIER: ${metaTitle.value || 'UNTITLED'}`,
+                    `DATE: ${metaYear.value || '2026'}`
+                ];
+
+                metaLines.forEach((line, index) => {
+                    ctx.fillText(line, metaMargin, metaY + (index * lineHeight));
+                });
+            }
+
+            placeholder.style.display = 'none';
+            canvas.style.display = 'block';
+        }
+
+        // EXPORT
+        exportBtn.addEventListener('click', () => {
+            if (!sourceImage) return;
+
+            const link = document.createElement('a');
+            const filename = metaTitle.value 
+                ? `${metaTitle.value}_${metaYear.value}.png`
+                : `blackcrow_watermark_${Date.now()}.png`;
+            
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        });
+
+        // RESET
+        resetBtn.addEventListener('click', () => {
+            sourceImage = null;
+            imageInput.value = '';
+            placeholder.style.display = 'block';
+            canvas.style.display = 'none';
+            exportBtn.disabled = true;
+            resetBtn.disabled = true;
+        });
+
+        // INIT
+        loadSettings();
+    </script>
+</body>
+</html>
